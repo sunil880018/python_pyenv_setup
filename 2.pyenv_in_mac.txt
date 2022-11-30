@@ -1,0 +1,43 @@
+
+STEP 1. Before you can install pyenv on macOS, several other software packages have to be installed before.
+        Firstly you need the XCode command line tools, which are installed via the following command:
+
+        i) xcode-select --install
+
+STEP 2. As pyenv builds the Python versions from scratch, some libraries for the build process are required.
+        Those libraries can be installed through the package manager Homebrew:
+
+        i) brew install openssl readline sqlite3 xz zlib
+
+STEP 3. Installing pyenv on macOS can be done in two ways. The first one is to use the package manager Homebrew:
+
+        i) brew update
+        ii) brew install pyenv
+
+
+                                         OR
+
+        If you don’t want to install pyenv via Homebrew, you can install it directly from the GitHub 
+        repository. Enter the following command into your command line to clone the pyenv GitHub repository 
+        into your home directory:
+
+        i) git clone https://github.com/pyenv/pyenv.git ~/.pyenv
+
+
+STEP 4. And after the installation has finished successfully, enter the following to add the pyenv to 
+        your $PATH and start pyenv when a new terminal window is opened (if you are not using zsh as a shell, 
+        you have to change ~/.zshrc accordingly):
+
+        i) echo 'eval "$(pyenv init --path)"' >> ~/.zshrc
+        
+
+STEP 5. After cloning or Installing it you need to enter the following commands to add pyenv to your $PATH and start it 
+        when a new terminal window is opened (if you use a different shell than zsh you have to 
+        change ~/.zshrc accordingly):
+
+        i) echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.zshrc
+        ii) echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.zshrc
+        iii) echo 'eval "$(pyenv init --path)"' >> ~/.zshrc
+
+
+

@@ -1,0 +1,25 @@
+
+
+STEP 1. To create a new virtual environment for your project, open a terminal in your project’s root directory. Make sure you set your 
+        desired Python version for this project using <pyenv local [PYTHON_VERSION]> then enter:
+
+        i) python -m venv .venv
+
+STEP 2. This command will create a new directory .venv which includes the Python interpreter (provided by 
+        pyenv) and all the modules installed using pip later on. After creating the newly created 
+        virtual environment,you have to activate it. This is done by entering:
+
+        i)  source .venv/bin/activate
+
+        and for Windows PowerShell:
+
+        ".\\.venv\\Scripts\\activate"
+
+
+        Now a (.venv) string will appear in front of your command line. After you activate the virtual 
+        environment, you can check with which python or get-command python that is now called from 
+        the .venv directory. And when you use pip, it also installs all modules into the .venv directory.
+        In the rare case you messed up your virtual environment, you can delete the .venv directory and 
+        create a new one with python -m venv .venv.
+
+

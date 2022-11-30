@@ -1,0 +1,35 @@
+https://k0nze.dev/posts/install-pyenv-venv-vscode/
+
+-------------------  Pyenv is a simple tool to manage multiple versions of Python-----------------------
+
+
+------------------ Installing pyenv Windows 10/11 ---------------------
+STEP 1. Download pyenv-win ZIP-archive: pyenv-win
+STEP 2. Create a new folder .pyenv in your user folder with the name .pyenv. 
+        You can do this using the Explorer or the following PowerShell command:
+
+        i)  mkdir $HOME/.pyenv
+
+STEP 3. Extract the ZIP-archive and copy the pyenv-win folder and the .version file from the
+        pyenv-win-master folder into the newly created .pyenv folder in your user folder.
+
+STEP 4. Set the environment variables PYENV and PYENV_HOME that point to the installation folder:
+       i) [System.Environment]::SetEnvironmentVariable('PYENV',$env:USERPROFILE + "\.pyenv\pyenv-win\","User")
+           [System.Environment]::SetEnvironmentVariable('PYENV_HOME',$env:USERPROFILE + "\.pyenv\pyenv-win\","User")
+
+STEP 5. Add the bin folder to the PATH variable. Such that pyenv can be found when using the command line.
+       i) [System.Environment]::SetEnvironmentVariable('path', $env:USERPROFILE + "\.pyenv\pyenv-win\bin;" + $env:USERPROFILE + "\.pyenv\pyenv-win\shims;" + [System.Environment]::GetEnvironmentVariable('path', "User"),"User")
+
+STEP 6. Close the current PowerShell.
+
+STEP 7. Enter the following command into the PowerShell to enable the execution of scripts
+       i)  Set-ExecutionPolicy unrestricted
+       ii) And press A to choose Yes to ALL. Afterward, you can close this PowerShell 
+           window and open a new one without admin privileges.
+STEP 8.  Now, you can run pyenv by entering
+    i) pyenv
+
+    If you encounter a security warning from where you have to choose if you want to run 
+    pyenv you can disable this warning by “unblocking” the pyenv script with the following command:
+    
+    i) Unblock-File $HOME/.pyenv/pyenv-win/bin/pyenv.ps1
